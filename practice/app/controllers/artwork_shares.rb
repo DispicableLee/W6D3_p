@@ -6,11 +6,11 @@ class ArtworkShares < ApplicationController
     end
 
     def create
-        artwork_shares = ArtworkShares.new(user_params)
+        artwork_shares = ArtworkShares.new(artwork_shares_params_params)
 
         if artwork_shares.save
             #render json:artwork_shares
-            redirect_to users_url(artwork_shares)
+            redirect_to artwork_shares_url(artwork_shares)
         else
             render artwork_shares.errors.full_messages, status: 422
         end
@@ -19,7 +19,7 @@ class ArtworkShares < ApplicationController
     def destroy
         artwork_shares = ArtworkShares.find_by(id: params[:id])
         if artwork_shares && artwork_shares.destroy
-            redirect_to user_url
+            redirect_to artwork_shares_url
         else
             render json: {'error': 'ArtworkShares does not exist'}
         end

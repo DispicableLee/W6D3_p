@@ -20,13 +20,13 @@ class ArtworksController < ApplicationController
     # POST
     # create a new artworks
     def create
-        artworks = Artwork.new(user_params)
+        artwork = Artwork.new(artwork_params)
 
-        if artworks.save
+        if artwork.save
             #render json:artworks
-            redirect_to users_url(artworks)
+            redirect_to artwork_url(artworks)
         else
-            render artworks.errors.full_messages, status: 422
+            render artwork.errors.full_messages, status: 422
         end
     end
 
@@ -36,9 +36,9 @@ class ArtworksController < ApplicationController
     # PATCH / PUT
     # update a artworks's information
     def update
-        artworks = Artwork.find(params[:id])
-        if artworks.update(user_params)
-            redirect_to user_url(artworks)
+        artwork = Artwork.find(params[:id])
+        if artwork.update(artwork_params)
+            redirect_to artwork_url(artworks)
         else
             render artworks.errors.full_message, status: 422
         end
@@ -48,16 +48,16 @@ class ArtworksController < ApplicationController
     # DELETE
     # deletes a specific artworks
     def destroy
-        artworks = Artwork.find_by(id: params[:id])
-        if artworks && artworks.destroy
-            redirect_to user_url
+        artwork = Artwork.find_by(id: params[:id])
+        if artwork && artwork.destroy
+            redirect_to artwork_url
         else
             render json: {'error': 'Artwork does not exist'}
         end
     end
 
     private
-    def artworks_params #create or change
+    def artwork_params #create or change
         params.require(:artworks).permit(:title, :image_url, :artist_id)
     end
 end

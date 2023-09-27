@@ -1,2 +1,219 @@
   [1m[35m (122.3ms)[0m  [1m[35mCREATE DATABASE "practice_development" ENCODING = 'unicode'[0m
   [1m[35m (124.8ms)[0m  [1m[35mCREATE DATABASE "practice_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2023-09-27 14:35:04 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.7ms | Allocations: 580)
+Completed 200 OK in 32ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 6569)
+
+
+Started GET "/" for ::1 at 2023-09-27 14:35:42 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 278)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1025)
+
+
+Started GET "/" for ::1 at 2023-09-27 14:36:28 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 246)
+
+
+Started GET "/" for ::1 at 2023-09-27 14:36:58 -0400
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 16)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started POST "/" for ::1 at 2023-09-27 14:37:31 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for ::1 at 2023-09-27 14:37:43 -0400
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/allonnam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 273)
+
+
+Started GET "/users" for ::1 at 2023-09-27 14:41:57 -0400
+  
+ActionController::RoutingError (uninitialized constant UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users" for ::1 at 2023-09-27 14:43:12 -0400
+  
+ActionController::RoutingError (uninitialized constant UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users" for ::1 at 2023-09-27 14:44:35 -0400
+  
+ActionController::RoutingError (uninitialized constant UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users" for ::1 at 2023-09-27 14:47:09 -0400
+  
+ActionController::RoutingError (uninitialized constant UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/users" for ::1 at 2023-09-27 14:47:15 -0400
+  
+ActionController::RoutingError (uninitialized constant UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users" for ::1 at 2023-09-27 14:53:35 -0400
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3384)
+
+
+  
+NameError (uninitialized constant UsersController::User
+
+        users = User.all
+                ^^^^):
+  
+app/controllers/users_controller.rb:5:in `index'
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7624278407833440675)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230927191600)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230927191600"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 19:19:02.932932"], ["updated_at", "2023-09-27 19:19:02.932932"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7624278407833440675)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2023-09-27 15:35:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 2973)
+
+
+Started POST "/users" for ::1 at 2023-09-27 15:37:16 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"allon", "email"=>"allon@gmail.com"}}
+[31mUnpermitted parameters: :username, :email. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000010ea2e4a0>, params: {"user"=>{"username"=>"allon", "email"=>"allon@gmail.com"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 5.4ms | Allocations: 11177)
+
+
+  
+ArgumentError ('"Username can't be blank"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/users_controller.rb:29:in `create'
+Started POST "/users" for ::1 at 2023-09-27 15:38:26 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"allon", "email"=>"allon@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "allon"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "allon"], ["email", "allon@gmail.com"], ["created_at", "2023-09-27 19:38:26.988287"], ["updated_at", "2023-09-27 19:38:26.988287"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.9ms | Allocations: 10628)
+
+
+  
+NoMethodError (undefined method `user_url' for #<UsersController:0x0000000000e8d0>
+
+            redirect_to user_url(user)
+                        ^^^^^^^^
+Did you mean?  users_url):
+  
+app/controllers/users_controller.rb:27:in `create'
+Started POST "/users" for ::1 at 2023-09-27 15:39:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"allon", "email"=>"allon@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "allon"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "allon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.4ms | Allocations: 13542)
+
+
+  
+ArgumentError ('"Username has already been taken"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/users_controller.rb:29:in `create'
+Started POST "/users" for ::1 at 2023-09-27 15:39:41 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"rob", "email"=>"rob@gmail.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "rob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "rob"], ["email", "rob@gmail.com"], ["created_at", "2023-09-27 19:39:41.031866"], ["updated_at", "2023-09-27 19:39:41.031866"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/users.2
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms | Allocations: 4825)
+
+
+Started GET "/users.2" for ::1 at 2023-09-27 15:39:41 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+

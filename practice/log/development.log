@@ -1058,3 +1058,206 @@ FOREIGN KEY ("author_id")
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7624278407833440675)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/comments" for ::1 at 2023-09-28 13:41:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+  Parameters: {"artworks"=>{"title"=>"plagarism", "image_url"=>"bbbbbb", "artist_id"=>"1"}}
+  [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 3.5ms | Allocations: 4012)
+
+
+Started POST "/comments" for ::1 at 2023-09-28 13:42:27 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x0000000109e88b18>, params: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 11.8ms | Allocations: 19246)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2023-09-28 13:44:33 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x000000010a72ba68>, params: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 3734)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2023-09-28 13:46:23 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x000000010a692e30>, params: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 12.4ms | Allocations: 13397)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2023-09-28 13:46:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x00000001081e36c0>, params: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 12.2ms | Allocations: 22073)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2023-09-28 13:46:55 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 568)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: comments
+Did you mean?  comment):
+  
+app/controllers/comments_controller.rb:30:in `comment_params'
+app/controllers/comments_controller.rb:11:in `create'
+Started POST "/comments" for ::1 at 2023-09-28 13:47:06 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x00000001086a2210>, params: {"comment"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 6.9ms | Allocations: 13420)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments" for ::1 at 2023-09-28 13:47:24 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x000000010887bd48>, params: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 9.4ms | Allocations: 13451)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started GET "/users" for ::1 at 2023-09-28 13:48:43 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1395)
+
+
+Started GET "/users" for ::1 at 2023-09-28 13:49:25 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 961)
+
+
+Started GET "/artworks" for ::1 at 2023-09-28 13:49:27 -0400
+Processing by ArtworksController#index as */*
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 3.7ms | Allocations: 4264)
+
+
+Started GET "/comments" for ::1 at 2023-09-28 13:49:48 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 820)
+
+
+Started POST "/users" for ::1 at 2023-09-28 13:50:05 -0400
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 514)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:83:in `user_params'
+app/controllers/users_controller.rb:29:in `create'
+Started POST "/comments?comments[artwork_id]=1&comments[author_id=1&comments[body]=first" for ::1 at 2023-09-28 13:51:55 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+[31mUnpermitted parameter: :artwork_id. Context: { controller: CommentsController, action: create, request: #<ActionDispatch::Request:0x000000010846b8e8>, params: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}, "controller"=>"comments", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 3631)
+
+
+  
+ArgumentError ('"Artwork must exist"' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/comments_controller.rb:15:in `create'
+Started POST "/comments?comments[artwork_id]=1&comments[author_id=1&comments[body]=first" for ::1 at 2023-09-28 13:53:35 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"comments"=>{"artwork_id"=>"1", "author_id"=>"1", "body"=>"first"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mComment Create (3.6ms)[0m  [1m[32mINSERT INTO "comments" ("artwork_id", "author_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["artwork_id", 1], ["author_id", 1], ["body", "first"], ["created_at", "2023-09-28 17:53:35.684468"], ["updated_at", "2023-09-28 17:53:35.684468"]]
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:12:in `create'
+Redirected to http://localhost:3000/comments.1
+Completed 302 Found in 31ms (ActiveRecord: 16.5ms | Allocations: 17182)
+
+
+Started GET "/comments.1" for ::1 at 2023-09-28 13:53:35 -0400
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 1006)
+
+

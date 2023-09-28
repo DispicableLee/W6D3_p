@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     def create
         comment = Comment.new(comment_params)
         if comment.save
-            redirect_to comment_url(comment)
+            redirect_to comments_url(comment)
         else
             render comment.errors.full_messages, status: 422
         end
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comments).permit(:artist_id, :author_id, :body)
+        params.require(:comments).permit(:artwork_id, :author_id, :body)
     end
 
 end

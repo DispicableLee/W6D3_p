@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         # creates a 'users' object containing all the users in the database
         
         # renders that object into individual json objects to be further manipulated in the views
-
+# debugger
         if params.has_key?(:query)
             user = User.find_by(username: params[:query])
         else
@@ -67,9 +67,10 @@ class UsersController < ApplicationController
     # DELETE
     # deletes a specific user
     def destroy
+        # debugger
         user = User.find_by(id: params[:id])
         if user && user.destroy
-            redirect_to user_url
+            redirect_to users_url
         else
             render json: {'error': 'User does not exist'}
         end

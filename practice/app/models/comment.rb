@@ -13,10 +13,10 @@ class Comment < ApplicationRecord
     belongs_to :artwork,
     primary_key: :id,
     foreign_key: :artwork_id,
-    class_name: :Artwork
+    class_name: :'Artwork'
 
     belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: :User
+    class_name: :'User'
 end

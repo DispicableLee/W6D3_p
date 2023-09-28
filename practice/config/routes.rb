@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   resources :users do 
     resources :artworks, only:[:index]
   end
-  # https://localhost:3000/users/:user_id/artworks
+  # http://localhost:3000/users/:user_id/artworks
   
   
   resources :users, only: [:index, :show, :create, :update, :destroy]

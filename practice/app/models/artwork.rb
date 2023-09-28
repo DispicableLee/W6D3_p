@@ -13,10 +13,11 @@ class Artwork < ApplicationRecord
     validates :title, presence: true, uniqueness: true
     
     belongs_to :artist,
-    class_name: 'User',
-    foreign_key: :artist_id,
-    primary_key: :id,
-    dependent: :destroy
+        class_name: 'User',
+        foreign_key: :artist_id,
+        inverse_of: :artworks
+        
+
 
     has_many :artworks_for_user_id,
         through: :artist,

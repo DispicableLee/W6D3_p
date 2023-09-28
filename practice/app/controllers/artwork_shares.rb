@@ -6,7 +6,7 @@ class ArtworkShares < ApplicationController
     end
 
     def create
-        artwork_shares = ArtworkShares.new(artwork_shares_params_params)
+        artwork_shares = ArtworkShares.new(artwork_shares_params)
 
         if artwork_shares.save
             #render json:artwork_shares

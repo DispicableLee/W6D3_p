@@ -3,9 +3,15 @@ class UsersController < ApplicationController
     # show all users
     def index
         # creates a 'users' object containing all the users in the database
-        users = User.all
+        
         # renders that object into individual json objects to be further manipulated in the views
-        render json: users
+
+        if params.has_key?(:query)
+            user = User.find_by(username: params[:query])
+        else
+            user = User.all
+        end
+        render json: user
     end
 
 

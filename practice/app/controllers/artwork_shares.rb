@@ -30,4 +30,8 @@ class ArtworkShares < ApplicationController
         params.require(:artwork_shares).permit(:artwork_id, :viewer_id)
     end
 
+
+    
+    
+
 end

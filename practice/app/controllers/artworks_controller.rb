@@ -24,7 +24,7 @@ class ArtworksController < ApplicationController
 
         if artwork.save
             #render json:artworks
-            redirect_to artwork_url(artworks)
+            redirect_to artwork_url(artwork)
         else
             render artwork.errors.full_messages, status: 422
         end

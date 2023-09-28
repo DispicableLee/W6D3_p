@@ -11,13 +11,18 @@
 #
 class Artwork < ApplicationRecord
     validates :title, presence: true, uniqueness: true
-
+    
     belongs_to :artist,
-        class_name: 'User',
-        foreign_key: :artist_id,
-        primary_key: :id,
-        dependent: :destroy
+    class_name: 'User',
+    foreign_key: :artist_id,
+    primary_key: :id,
+    dependent: :destroy
 
+    has_many :artworks_for_user_id,
+        through: :artist,
+        source: :artworks
+    
+    
     has_many :artwork_shares,
         class_name: 'ArtworkShare',
         foreign_key: :artwork_id,
@@ -27,6 +32,9 @@ class Artwork < ApplicationRecord
     has_many :shared_viewers,
         through: :artwork_shares,
         source: :viewer
+
+
+    
 
 
         

@@ -894,3 +894,141 @@ Processing by ArtworksController#show as */*
 Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3162)
 
 
+Started GET "/" for ::1 at 2023-09-28 11:16:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/robertlee/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/robertlee/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 475)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 3987)
+
+
+Started GET "/users" for ::1 at 2023-09-28 11:16:12 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 85ms (Views: 63.2ms | ActiveRecord: 15.2ms | Allocations: 6949)
+
+
+Started GET "/users" for ::1 at 2023-09-28 11:16:25 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1059)
+
+
+Started GET "/users/1" for ::1 at 2023-09-28 11:16:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 4754)
+
+
+Started GET "/users/1/artworks" for ::1 at 2023-09-28 11:16:34 -0400
+Processing by ArtworksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 916)
+
+
+  
+SyntaxError (/Users/robertlee/Desktop/AppAcademy/W6/W6D3_p/practice/app/models/artwork.rb:22: syntax error, unexpected ':', expecting `end'
+        through: :artist,
+               ^
+):
+  
+app/models/artwork.rb:22: syntax error, unexpected ':', expecting `end'
+app/models/artwork.rb:22: syntax error, unexpected ':', expecting `end'
+app/controllers/artworks_controller.rb:6:in `index'
+Started GET "/users/1/artworks" for ::1 at 2023-09-28 11:16:58 -0400
+Processing by ArtworksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 6656)
+
+
+Started GET "/users/2/artworks" for ::1 at 2023-09-28 11:17:23 -0400
+Processing by ArtworksController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 692)
+
+
+Started GET "/users" for ::1 at 2023-09-28 11:17:33 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 2.9ms | ActiveRecord: 4.7ms | Allocations: 3867)
+
+
+Started GET "/users3/" for ::1 at 2023-09-28 11:17:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users3"):
+  
+Started GET "/users" for ::1 at 2023-09-28 11:17:46 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1101)
+
+
+Started GET "/users/3" for ::1 at 2023-09-28 11:17:47 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1317)
+
+
+Started GET "/users/3/artworks" for ::1 at 2023-09-28 11:17:52 -0400
+Processing by ArtworksController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 679)
+
+
+Started GET "/artworks" for ::1 at 2023-09-28 11:18:41 -0400
+Processing by ArtworksController#index as HTML
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:10:in `index'
+Completed 200 OK in 13ms (Views: 5.7ms | ActiveRecord: 5.5ms | Allocations: 4902)
+
+
+Started GET "/artworks" for ::1 at 2023-09-28 11:19:09 -0400
+Processing by ArtworksController#index as HTML
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1035)
+
+
+Started GET "/users/1/artworks" for ::1 at 2023-09-28 11:19:32 -0400
+Processing by ArtworksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1332)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column artworks.user_id does not exist
+LINE 1: SELECT "artworks".* FROM "artworks" WHERE "artworks"."user_i...
+                                                  ^
+):
+  
+app/controllers/artworks_controller.rb:10:in `index'
+Started GET "/users/1/artworks" for ::1 at 2023-09-28 11:20:04 -0400
+Processing by ArtworksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/controllers/artworks_controller.rb:10:in `index'
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 6.1ms | Allocations: 5008)
+
+
+Started GET "/users/1/img/copy.svg" for ::1 at 2023-09-28 11:20:27 -0400
+Started GET "/users/1/img/path.svg" for ::1 at 2023-09-28 11:20:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/img/copy.svg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/img/path.svg"):
+  
